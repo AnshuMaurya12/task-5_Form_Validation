@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form_Validation</title>
+</head>
+
+<body>
+    <form name="myForm" onsubmit="return validationForm()">
+        <label>First Name :</label>
+        <input type="text" name="fname" id="FirstName" placeholder="FirstName" pattern="[A-Za-z]{4,10}"></br></br>
+        <label>Last Name :</label>
+        <input type="text" name="lname" id="LastName" placeholder="LastName" pattern="[A-Za-z]{4,10}"></br></br>
+
+        <label>Email Id:</label>
+        <input type="email" name="email" id="email" placeholder="Email ID" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></br></br>
+
+        <label>Contact:</label>
+        <input type="tel" name="contact" id="contact" placeholder="123-456-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"></br></br>
+        </var>
+        <label>Password :</label>
+        <input type="password" name="psd" id="psd" placeholder="1 capital letter, 1 small, 1special,1 no. " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"></br></br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+
+        function validationForm() {
+            var fname = document.getElementById("FirstName").value;
+            var lname = document.getElementById("LastName").value;
+            var email = document.getElementById("email").value;
+            var contact = document.getElementById("contact").value;
+            var psd = document.getElementById("psd").value;
+
+            if (fname == "" || lname == "" || email == "" || contact == "" || psd=="") {
+              document.getElementById("FirstName").style.border="1px dotted red";
+              document.getElementById("LastName").style.border="1px dotted red";
+              document.getElementById("email").style.border="1px dotted red";
+              document.getElementById("contact").style.border="1px dotted red";
+              document.getElementById("psd").style.border="1px dotted red";
+                alert("Fill the all Field");
+                return false;
+            }
+            
+
+        }
+
+    </script>
+
+</body>
+
+</html>
